@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
+group 'co.dlacademy'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -11,24 +11,11 @@ repositories {
 
 dependencies {
     implementation 'org.testng:testng:7.4.0'
-
-    // Dependencias de Selenium WebDriver
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
-    implementation 'io.github.bonigarcia:webdrivermanager:4.4.3'
-    // Dependencias del controlador de Chrome
-    implementation 'io.github.bonigarcia:webdrivermanager:5.0.3'
     implementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
-
-    // Dependencias del controlador de Firefox
     implementation 'org.seleniumhq.selenium:selenium-firefox-driver:3.141.59'
-
-    // Dependencias del controlador de Microsoft Edge
     implementation 'org.seleniumhq.selenium:selenium-edge-driver:3.141.59'
-
-    // https://mvnrepository.com/artifact/com.aventstack/extentreports
-    implementation group: 'com.aventstack', name: 'extentreports', version: '4.1.6'
-
-
+    implementation 'com.aventstack:extentreports:4.1.6'
 }
 
 test {

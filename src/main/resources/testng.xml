@@ -1,15 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Selenium Grid Tests" parallel="tests">
+<suite name="Selenium Grid Tests - Dip Learn Academy" parallel="tests">
 
     <listeners>
-        <listener class-name="org.example.ExtentTestNgFormatter"/>
+        <listener class-name="co.dlacademy.ExtentTestNgFormatter"/>
     </listeners>
 
     <test name="Chrome Test" parallel="methods">
         <parameter name="browser" value="chrome" />
         <parameter name="value" value="pass" />
         <classes>
-            <class name="org.example.SeleniumGridExample" />
+            <class name="co.dlacademy.SeleniumGridExample" />
         </classes>
     </test>
 
@@ -17,15 +17,15 @@
         <parameter name="browser" value="firefox" />
         <parameter name="value" value="pass" />
         <classes>
-            <class name="org.example.SeleniumGridExample" />
+            <class name="co.dlacademy.SeleniumGridExample" />
         </classes>
     </test>
 
     <test name="Edge Test" parallel="methods">
         <parameter name="browser" value="edge" />
-        <parameter name="value" value="fail" />
+        <parameter name="value" value="pass" />
         <classes>
-            <class name="org.example.SeleniumGridExample" />
+            <class name="co.dlacademy.SeleniumGridExample" />
         </classes>
     </test>
 
