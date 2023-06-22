@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Selenium Grid Tests" parallel="tests">
 
+    <listeners>
+        <listener class-name="org.example.ExtentTestNgFormatter"/>
+    </listeners>
+
     <test name="Chrome Test" parallel="methods">
         <parameter name="browser" value="chrome" />
+        <parameter name="value" value="pass" />
         <classes>
             <class name="org.example.SeleniumGridExample" />
         </classes>
@@ -10,6 +15,7 @@
 
     <test name="Firefox Test" parallel="methods">
         <parameter name="browser" value="firefox" />
+        <parameter name="value" value="pass" />
         <classes>
             <class name="org.example.SeleniumGridExample" />
         </classes>
@@ -17,6 +23,7 @@
 
     <test name="Edge Test" parallel="methods">
         <parameter name="browser" value="edge" />
+        <parameter name="value" value="fail" />
         <classes>
             <class name="org.example.SeleniumGridExample" />
         </classes>

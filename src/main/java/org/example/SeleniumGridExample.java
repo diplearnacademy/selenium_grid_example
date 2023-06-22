@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -17,7 +18,7 @@ public class SeleniumGridExample {
     private WebDriver driver;
 
     @Parameters("browser")
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup(String browser) throws Exception {
 
         MutableCapabilities capabilities;
@@ -43,7 +44,8 @@ public class SeleniumGridExample {
     }
 
     @Test
-    public void testExample() throws InterruptedException {
+    @Parameters("value")
+    public void testExample(String value) throws InterruptedException {
 
         // Abre la página de ejemplo
         driver.get("https://www.google.com");
@@ -60,9 +62,10 @@ public class SeleniumGridExample {
 
         // Imprime el título de la página de resultados
         System.out.println("Título de la página de resultados: " + driver.getTitle());
+        Assert.assertEquals(value,"pass");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();
