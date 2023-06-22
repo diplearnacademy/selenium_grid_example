@@ -19,7 +19,7 @@ public class SeleniumGridExample {
     @Parameters("browser")
     @BeforeMethod
     public void setup(String browser) throws Exception {
-        browser = "edge";
+
         MutableCapabilities capabilities;
 
         if (browser.equalsIgnoreCase("chrome")) {
