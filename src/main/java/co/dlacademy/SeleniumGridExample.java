@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -45,21 +46,20 @@ public class SeleniumGridExample {
     @Test
     public void testExample() throws InterruptedException {
 
-        // Abre la página de ejemplo
-        driver.get("https://www.google.com");
+        driver.get("https://www.saucedemo.com/");
 
-        // Busca el campo de búsqueda y escribe algo
-        WebElement searchBox = driver.findElement(By.name("q"));
-        searchBox.sendKeys("Selenium Grid");
+        WebElement campoUsuario = driver.findElement(By.xpath("//input[@id='user-name']"));
+        WebElement campoPassword = driver.findElement(By.id("password"));
+        WebElement botonLogin = driver.findElement(By.id("login-button"));
 
-        // Envía el formulario de búsqueda
-        searchBox.submit();
+        campoUsuario.sendKeys("standard_user");
+        campoPassword.sendKeys("secret_sauce");
+        botonLogin.click();
 
-        // Espera unos segundos para que los resultados se carguen
-        Thread.sleep(3000);
+        WebElement tituloHomePage = driver.findElement(By.xpath("//span[contains(.,'Products')]"));
 
-        // Imprime el título de la página de resultados
-        System.out.println("Título de la página de resultados: " + driver.getTitle());
+        Assert.assertEquals("Products", tituloHomePage.getText());
+        driver.close();
     }
 
     @AfterMethod
