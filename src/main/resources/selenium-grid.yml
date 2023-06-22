@@ -5,7 +5,7 @@ version: "3"
 services:
   chrome:
     image: selenium/node-chrome:4.10.0-20230607
-    shm_size: 2gb
+    shm_size: 1gb
     depends_on:
       - selenium-hub
     environment:
@@ -17,7 +17,7 @@ services:
 
   edge:
     image: selenium/node-edge:4.10.0-20230607
-    shm_size: 2gb
+    shm_size: 1gb
     depends_on:
       - selenium-hub
     environment:
@@ -30,7 +30,7 @@ services:
 
   firefox:
     image: selenium/node-firefox:4.10.0-20230607
-    shm_size: 2gb
+    shm_size: 1gb
     depends_on:
       - selenium-hub
     environment:
