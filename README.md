@@ -19,3 +19,12 @@ Rama **testReport**: Esta rama contiene el codigo planteado  y adicionalmente un
 docker-compose -f drlrmium-grid.yml up
 ```
 - ejecutar el archivo testng.xml
+### Happy Coding!
+
+
+------------
+
+
+##### Dip Learn Academy
+##### Juan de Jesús Fernández Graciano
+##### Bryan Estefan Moreno Diaz
